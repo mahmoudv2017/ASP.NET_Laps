@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1", "WebApplication2\Day1.csproj", "{BE71A70B-5DC1-4C8A-8490-D20D42E96297}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryingOut", "..\..\Day1\Course.MVC\TryingOut\TryingOut.csproj", "{A50B625B-80CF-4E6B-950E-DACF40DF81AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE71A70B-5DC1-4C8A-8490-D20D42E96297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE71A70B-5DC1-4C8A-8490-D20D42E96297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE71A70B-5DC1-4C8A-8490-D20D42E96297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE71A70B-5DC1-4C8A-8490-D20D42E96297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A50B625B-80CF-4E6B-950E-DACF40DF81AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A50B625B-80CF-4E6B-950E-DACF40DF81AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A50B625B-80CF-4E6B-950E-DACF40DF81AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A50B625B-80CF-4E6B-950E-DACF40DF81AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98A30608-201F-4FD7-AAC1-64EC400D4AF2}
+	EndGlobalSection
+EndGlobal

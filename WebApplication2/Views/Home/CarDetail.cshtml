@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var car = Model.car;
+    var type = Model.type;
+    TimeSpan usageDuration = DateTime.Now - car.FirstUseDate;
+    var Years = DateTime.Now.Year - car.FirstUseDate.Year;
+
+ 
+}
+
+@if(type == "list")
+{
+    <h1>You Came from a list</h1>
+}
+else
+{
+        <h1>You Came from a table</h1>
+
+}
+
+<ul>
+    <li> @car.Model</li>
+    <li> @car.Manufacturer</li>
+    <li> @car.Image</li>
+    <li> @Html.Raw(@car.HtmlDescription)</li>
+    <li>
+        <strong>@car.Model</strong>  from @car.Manufacturer
+
+        and user for
+
+        <b>@Years</b>  Years
+        <b> @(usageDuration.Days / 30)</b>  Month
+
+        <b>@usageDuration.Days</b>  days and
+
+    </li>
+
+    <li>
+        <figure class="figure">
+            <img src="https://picsum.photos/500" class="figure-img img-fluid rounded" />
+            <figcaption class="figure-caption">@car.Image</figcaption>
+        </figure>
+    </li>
+</ul>
+

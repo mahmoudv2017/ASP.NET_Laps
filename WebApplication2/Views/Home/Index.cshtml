@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var cars = Model;
+}
+@using TryingOut.Lab1Entities;
+@model List<Car>;
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@{
+    void DisplayTable()
+    {
+        <h1 style="margin-block:5vh;">table</h1>
+        <table>
+       <thead>
+        <tr>
+            <th>
+                model
+            </th>
+
+            <th>Manufacture</th>
+
+            <th>Description</th>
+
+                    <th>Button</th>
+        </tr>
+       </thead>
+
+       <tbody>
+        
+       
+       @foreach (var item in cars)
+        {
+                    <tr>
+            <td> <b>@item.Model</b> </td>
+            <td>@item.Manufacturer</td>
+            <td>
+                @Html.Raw(item.HtmlDescription)
+            </td>
+            <td>
+                <a href="/home/carDetails?image=@item.Image&type=table" class="btn btn-primary">check me</a>
+            </td>
+                    </tr>
+        }
+            
+            </tbody>
+        </table>
+    }
+
+    void DisplayList()
+    {
+        <h1 style ="margin-block:5vh; color:skyblue">List</h1>
+       <ul>
+
+
+            @foreach (var item in cars)
+            {
+                
+                 TimeSpan usageDuration = DateTime.Now - item.FirstUseDate;
+                var Years = DateTime.Now.Year - item.FirstUseDate.Year;
+
+                <li> <strong>@item.Model</strong>  from @item.Manufacturer
+
+                    and user for
+
+                    <b>@Years</b>  Years
+                    <b> @(usageDuration.Days/30)</b>  Month
+                   
+                    <b>@usageDuration.Days</b>  days and
+
+
+                    <strong>
+                        <a href="/home/carDetails?image=@item.Image&type=list" class="btn btn-primary">check me</a>
+                    </strong>
+                
+                </li>
+
+               
+
+         
+            }
+
+                   
+       </ul>
+    }
+}
+
+@{
+    DisplayTable();
+    DisplayList();
+}
+
+
+
+
+
+
+
