@@ -1,0 +1,17 @@
+﻿@using Day2.Models.Domain;
+
+@model List<Ticket>
+
+
+@foreach (var item in Model)
+{
+    <ul>
+        <li>@item.CreatedDate</li>
+        <li>@item.Description</li>
+        <li>@item.Severity</li>
+        <li>@item.IsClosed</li>
+    </ul>
+    
+}
+
+

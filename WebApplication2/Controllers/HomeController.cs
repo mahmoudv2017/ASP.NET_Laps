@@ -36,6 +36,28 @@ namespace WebApplication2.Controllers
             return View("CarDetail", CarSData);
         }
 
+        [Route("/Home/carDetails2/{title}")]
+        public IActionResult carDetails2(string title)
+        {
+          //  Car car = Car.GetCars().FirstOrDefault(c => c.Image == image);
+
+            Console.WriteLine(" title portal");
+
+
+
+            List<Car> cars = Car.GetCars();
+            return View("index",cars);
+        }
+
+        [Route("/Home/carDetails2/{id:int}")]
+        public IActionResult carDetails3(int id)
+        {
+       
+            Console.WriteLine("int portal");
+            List<Car> cars = Car.GetCars();
+            return View("index",cars);
+        }
+
         public IActionResult Privacy()
         {
             return View();
