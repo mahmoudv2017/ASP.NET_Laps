@@ -4,7 +4,7 @@
 
 @{
     var Tickets = ViewData["tickets"] as IEnumerable<SelectListItem> ;
-    Console.WriteLine("asd");
+  
 }
 
 <form asp-action="ADDTicket" method="post">
@@ -23,8 +23,14 @@
         <label asp-for="IsClosed"></label>
         <input  asp-for="IsClosed" />
     </div>
+
+    @*the hard way*@
     <select asp-for="Severity" asp-items="Tickets"></select>
-   @* <select asp-for="Severity" asp-items="Html.GetEnumSelectList<Severity>()"></select>*@
+   @*
+
+   //the right way
+
+   <select asp-for="Severity" asp-items="Html.GetEnumSelectList<Severity>()"></select>*@
 
     <button type="submit">Submite me</button>
 </form>
