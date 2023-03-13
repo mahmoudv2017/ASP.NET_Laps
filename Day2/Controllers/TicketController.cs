@@ -2,6 +2,7 @@
 using Day2.Models.View;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
 
 namespace Day2.Controllers
 {
@@ -23,12 +24,13 @@ namespace Day2.Controllers
         public IActionResult ADD()
         {
 
-            //typeof(Severity).ReflectedType.
-            int count = Enum.GetValues(typeof(Severity)).Length;
 
-            var SeverityList = Enumerable.Range(0, count);
+            var count = Enum.GetValues(typeof(Severity)).Length;
+            var arrays = Enum.GetValues(typeof(Severity));
 
-            //ViewData["tickets"] = SeverityList;  
+            var lister = Enumerable.Range(0, count).Select(i => new SelectListItem(arrays.GetValue(i).ToString(), i.ToString())) ;
+
+            ViewData.Add("tickets" , lister);  
             return View("add");
         }
 

@@ -3,7 +3,8 @@
 @model AddTicketVM;
 
 @{
-    var Tickets = ViewData["tickets"] as List<SelectListItem>;
+    var Tickets = ViewData["tickets"] as IEnumerable<SelectListItem> ;
+    Console.WriteLine("asd");
 }
 
 <form asp-action="ADDTicket" method="post">
@@ -22,8 +23,8 @@
         <label asp-for="IsClosed"></label>
         <input  asp-for="IsClosed" />
     </div>
-
-    <select asp-for="Severity" asp-items="Html.GetEnumSelectList<Severity>()"></select>
+    <select asp-for="Severity" asp-items="Tickets"></select>
+   @* <select asp-for="Severity" asp-items="Html.GetEnumSelectList<Severity>()"></select>*@
 
     <button type="submit">Submite me</button>
 </form>
