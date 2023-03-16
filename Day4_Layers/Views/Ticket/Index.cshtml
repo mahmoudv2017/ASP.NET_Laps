@@ -1,0 +1,18 @@
+﻿@using TicketLayer.BL.ViewModels.Tickets;
+@model List<TicketIndexVM>
+@{
+}
+
+<h1>Tickets Index Goes Here</h1>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Description</li>
+        <li>@item.IsClosed</li>
+        <li>@item.Severity</li>
+        <li>@item.Dept_ID</li>
+
+    }
+
+</ul>

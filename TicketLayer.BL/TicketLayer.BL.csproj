@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TicketsLayer.DAL\TicketsLayer.DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Managers\Developers\" />
+    <Folder Include="Managers\Departments\" />
+    <Folder Include="ViewModels\Developers\" />
+    <Folder Include="ViewModels\Departments\" />
+  </ItemGroup>
+
+</Project>
