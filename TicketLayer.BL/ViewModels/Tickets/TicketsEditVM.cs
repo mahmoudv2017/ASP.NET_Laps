@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,5 +19,6 @@ public class TicketsEditVM
 
     public Severity Severity { get; set; }
 
-    public int Dept_ID { get; set; } //should be a collection
+    public IEnumerable<SelectListItem>? Departments { get; set; } //should be a collection
+    public IEnumerable<SelectListItem>? Developers { get; set; }
 }

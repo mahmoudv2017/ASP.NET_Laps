@@ -16,4 +16,5 @@ public interface ITicketRepo
     void Save();
 
     void Update(Ticket ticket);
+    void Delete(Ticket ticket);
 }

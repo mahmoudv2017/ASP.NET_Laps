@@ -10,7 +10,11 @@ namespace TicketLayer.BL.Managers.Tickets;
 public interface ITickersManager
 {
     public List<TicketIndexVM> GetALL();
-    TicketsEditVM PageForEdit(int id);
 
+    TicketIndexVM Get(int id);
+    TicketsEditVM PageForEdit(int id);
+    //public List<TicketIndexVM> GetTicketWithDeparments();
+
+    //public List<TicketIndexVM> GetTicketWithDevelopers();
     void update(TicketsEditVM tvm);
 }

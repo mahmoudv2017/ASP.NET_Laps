@@ -1,0 +1,21 @@
+﻿@using TicketLayer.BL.ViewModels.Tickets;
+@model TicketIndexVM;
+
+
+<div class="card col-lg-4">
+    <div class="card-body d-flex flex-column text-center">
+        <strong> Description </strong>
+        <p class="badge alert-primary">  @Model.Description</p>
+        <strong> IsClosed </strong>
+        <p class="badge alert-success">  @Model.IsClosed</p>
+        <strong> Severity </strong>
+        <p class="badge alert-danger"> @Model.Severity</p>
+
+            <strong> DepartmentName </strong>
+        <p class="badge alert-secondary"> @Model.DepartmentName</p>
+        <strong> DeveloperCount </strong>
+        <p class="badge alert-secondary"> @Model.DeveloperCount</p>
+
+      
+    </div>
+</div>

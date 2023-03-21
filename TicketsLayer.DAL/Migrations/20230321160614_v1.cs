@@ -2,6 +2,8 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace TicketsLayer.DAL.Migrations
 {
     /// <inheritdoc />
@@ -31,14 +33,14 @@ namespace TicketsLayer.DAL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Dept_ID = table.Column<int>(type: "int", nullable: false)
+                    DepartmentID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Developers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Developers_Departments_Dept_ID",
-                        column: x => x.Dept_ID,
+                        name: "FK_Developers_Departments_DepartmentID",
+                        column: x => x.DepartmentID,
                         principalTable: "Departments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -53,63 +55,78 @@ namespace TicketsLayer.DAL.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsClosed = table.Column<bool>(type: "bit", nullable: false),
                     Severity = table.Column<int>(type: "int", nullable: false),
-                    DepartmentId = table.Column<int>(type: "int", nullable: true)
+                    Dept_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tickets", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tickets_Departments_DepartmentId",
-                        column: x => x.DepartmentId,
+                        name: "FK_Tickets_Departments_Dept_id",
+                        column: x => x.Dept_id,
                         principalTable: "Departments",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Dev_Tickets",
+                name: "DeveloperTicket",
                 columns: table => new
                 {
-                    Dev_id = table.Column<int>(type: "int", nullable: false),
-                    Ticket_id = table.Column<int>(type: "int", nullable: false)
+                    DevelopersId = table.Column<int>(type: "int", nullable: false),
+                    IssuesId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Dev_Tickets", x => new { x.Ticket_id, x.Dev_id });
+                    table.PrimaryKey("PK_DeveloperTicket", x => new { x.DevelopersId, x.IssuesId });
                     table.ForeignKey(
-                        name: "FK_Dev_Tickets_Developers_Dev_id",
-                        column: x => x.Dev_id,
+                        name: "FK_DeveloperTicket_Developers_DevelopersId",
+                        column: x => x.DevelopersId,
                         principalTable: "Developers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Dev_Tickets_Tickets_Ticket_id",
-                        column: x => x.Ticket_id,
+                        name: "FK_DeveloperTicket_Tickets_IssuesId",
+                        column: x => x.IssuesId,
                         principalTable: "Tickets",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Dev_Tickets_Dev_id",
-                table: "Dev_Tickets",
-                column: "Dev_id");
+            migrationBuilder.InsertData(
+                table: "Departments",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Automotive & Baby" },
+                    { 2, "Beauty & Health" },
+                    { 3, "Electronics" }
+                });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Developers_Dept_ID",
+            migrationBuilder.InsertData(
                 table: "Developers",
-                column: "Dept_ID");
+                columns: new[] { "Id", "DepartmentID", "FirstName", "LastName" },
+                values: new object[] { 1, 1, "Freddie", "Johnson" });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tickets_DepartmentId",
+                name: "IX_Developers_DepartmentID",
+                table: "Developers",
+                column: "DepartmentID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DeveloperTicket_IssuesId",
+                table: "DeveloperTicket",
+                column: "IssuesId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tickets_Dept_id",
                 table: "Tickets",
-                column: "DepartmentId");
+                column: "Dept_id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Dev_Tickets");
+                name: "DeveloperTicket");
 
             migrationBuilder.DropTable(
                 name: "Developers");

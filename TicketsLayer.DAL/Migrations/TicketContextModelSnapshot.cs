@@ -21,6 +21,21 @@ namespace TicketsLayer.DAL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DeveloperTicket", b =>
+                {
+                    b.Property<int>("DevelopersId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IssuesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DevelopersId", "IssuesId");
+
+                    b.HasIndex("IssuesId");
+
+                    b.ToTable("DeveloperTicket");
+                });
+
             modelBuilder.Entity("TicketsLayer.DAL.Models.Department", b =>
                 {
                     b.Property<int>("Id")
@@ -36,21 +51,23 @@ namespace TicketsLayer.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Departments");
-                });
 
-            modelBuilder.Entity("TicketsLayer.DAL.Models.Dev_Tickets", b =>
-                {
-                    b.Property<int>("Ticket_id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Dev_id")
-                        .HasColumnType("int");
-
-                    b.HasKey("Ticket_id", "Dev_id");
-
-                    b.HasIndex("Dev_id");
-
-                    b.ToTable("Dev_Tickets");
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Automotive & Baby"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Beauty & Health"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Electronics"
+                        });
                 });
 
             modelBuilder.Entity("TicketsLayer.DAL.Models.Developer", b =>
@@ -61,7 +78,7 @@ namespace TicketsLayer.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Dept_ID")
+                    b.Property<int>("DepartmentID")
                         .HasColumnType("int");
 
                     b.Property<string>("FirstName")
@@ -74,9 +91,18 @@ namespace TicketsLayer.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Dept_ID");
+                    b.HasIndex("DepartmentID");
 
                     b.ToTable("Developers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DepartmentID = 1,
+                            FirstName = "Freddie",
+                            LastName = "Johnson"
+                        });
                 });
 
             modelBuilder.Entity("Your_Project_Name.Models.Domain.Ticket", b =>
@@ -100,37 +126,102 @@ namespace TicketsLayer.DAL.Migrations
                     b.Property<int>("Severity")
                         .HasColumnType("int");
 
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Dept_id");
 
                     b.ToTable("Tickets");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 20,
+                            Dept_id = 2,
+                            Description = "Harum hic impedit dolore voluptate placeat.",
+                            IsClosed = true,
+                            Severity = 1,
+                            Title = "in"
+                        },
+                        new
+                        {
+                            Id = 1,
+                            Dept_id = 1,
+                            Description = "Rerum totam est quo possimus sunt sunt ad.",
+                            IsClosed = false,
+                            Severity = 0,
+                            Title = "id"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Dept_id = 3,
+                            Description = "Id cumque explicabo beatae.",
+                            IsClosed = false,
+                            Severity = 1,
+                            Title = "dicta"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Dept_id = 2,
+                            Description = "Consectetur beatae dolorem voluptates occaecati.",
+                            IsClosed = false,
+                            Severity = 0,
+                            Title = "eius"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Dept_id = 1,
+                            Description = "Nulla est doloribus ut non aspernatur vero dolores.",
+                            IsClosed = false,
+                            Severity = 2,
+                            Title = "assumenda"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Dept_id = 2,
+                            Description = "Et praesentium est ipsum eligendi rerum itaque voluptate quia.",
+                            IsClosed = false,
+                            Severity = 1,
+                            Title = "ex"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Dept_id = 3,
+                            Description = "Optio non debitis ut molestiae dolorem ad.",
+                            IsClosed = false,
+                            Severity = 2,
+                            Title = "velit"
+                        });
                 });
 
-            modelBuilder.Entity("TicketsLayer.DAL.Models.Dev_Tickets", b =>
+            modelBuilder.Entity("DeveloperTicket", b =>
                 {
-                    b.HasOne("TicketsLayer.DAL.Models.Developer", "Developer")
-                        .WithMany("Tickets")
-                        .HasForeignKey("Dev_id")
+                    b.HasOne("TicketsLayer.DAL.Models.Developer", null)
+                        .WithMany()
+                        .HasForeignKey("DevelopersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Your_Project_Name.Models.Domain.Ticket", "Ticket")
-                        .WithMany("Developers")
-                        .HasForeignKey("Ticket_id")
+                    b.HasOne("Your_Project_Name.Models.Domain.Ticket", null)
+                        .WithMany()
+                        .HasForeignKey("IssuesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Developer");
-
-                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("TicketsLayer.DAL.Models.Developer", b =>
                 {
                     b.HasOne("TicketsLayer.DAL.Models.Department", "Department")
                         .WithMany("Developers")
-                        .HasForeignKey("Dept_ID")
+                        .HasForeignKey("DepartmentID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -153,16 +244,6 @@ namespace TicketsLayer.DAL.Migrations
                     b.Navigation("Developers");
 
                     b.Navigation("Tickets");
-                });
-
-            modelBuilder.Entity("TicketsLayer.DAL.Models.Developer", b =>
-                {
-                    b.Navigation("Tickets");
-                });
-
-            modelBuilder.Entity("Your_Project_Name.Models.Domain.Ticket", b =>
-                {
-                    b.Navigation("Developers");
                 });
 #pragma warning restore 612, 618
         }

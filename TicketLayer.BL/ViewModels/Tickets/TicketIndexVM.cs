@@ -10,6 +10,7 @@ namespace TicketLayer.BL.ViewModels.Tickets;
 
 public record TicketIndexVM
 {
+    public int Id { get; set; }
     public string Description { get; set; }=string.Empty;
 
     [Display(Name ="is Closed ?")]
@@ -17,5 +18,9 @@ public record TicketIndexVM
 
     public Severity Severity { get; set; }
 
-    public int Dept_ID { get; set; }
+    [Display(Name ="Department Name")]
+    public string DepartmentName { get; set; }= string.Empty;
+
+    [Display(Name = "Developer Count")]
+    public string DeveloperCount { get; set; } = string.Empty;
 }

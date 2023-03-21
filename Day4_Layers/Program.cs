@@ -1,6 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using TicketLayer.BL.Managers.Departments;
+using TicketLayer.BL.Managers.Developers;
 using TicketLayer.BL.Managers.Tickets;
 using TicketsLayer.DAL.Context;
+using TicketsLayer.DAL.Repos.DepartmentRepo;
+using TicketsLayer.DAL.Repos.DeveloperRepo;
 using TicketsLayer.DAL.Repos.TicketRepo;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +19,12 @@ builder.Services.AddDbContext<TicketContext>(options => options.UseSqlServer(Con
 
 builder.Services.AddScoped<ITicketRepo, TickerRepo>();
 builder.Services.AddScoped<ITickersManager, TicketsManager>();
+
+builder.Services.AddScoped<IDeveloperRepo, DeveloperRepo>();
+builder.Services.AddScoped<IDeveloperManager, DeveloperManager>();
+
+builder.Services.AddScoped<IDepartmentRepo, DepartmentRepo>();
+builder.Services.AddScoped<IDeparmtentsManager, DepartmentsManager>();
 
 var app = builder.Build();
 
