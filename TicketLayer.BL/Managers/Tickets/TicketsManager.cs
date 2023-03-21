@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
+using System.Diagnostics;
 using TicketLayer.BL.Managers.Departments;
 using TicketLayer.BL.Managers.Developers;
 using TicketLayer.BL.ViewModels.Tickets;
@@ -16,13 +14,19 @@ namespace TicketLayer.BL.Managers.Tickets;
 public class TicketsManager : ITickersManager
 {
     private ITicketRepo _ticketRepo;
-    private IDeparmtentsManager _departmentRepo;
-    private IDeveloperManager _developerRepo;
-    public TicketsManager(ITicketRepo tickerRepo , IDeparmtentsManager departmentRepo , IDeveloperManager DeveloperRepo)
+    private IDepartmentRepo _departmentRepo;
+    private IDeveloperRepo _developerRepo;
+    public TicketsManager(ITicketRepo tickerRepo , IDepartmentRepo departmentRepo , IDeveloperRepo DeveloperRepo)
     {
         _ticketRepo= tickerRepo;
+        _developerRepo = DeveloperRepo;
         _departmentRepo = departmentRepo;
-        _developerRepo= DeveloperRepo;
+    }
+
+    public void delete(int id)
+    {
+        var TicketToRemove = _ticketRepo.Get(id);
+        _ticketRepo.Delete(TicketToRemove);
     }
 
     public TicketIndexVM Get(int id)
@@ -45,21 +49,22 @@ public class TicketsManager : ITickersManager
     public TicketsEditVM PageForEdit(int id)
     {
         var ticker = _ticketRepo.Get(id);
-        var departments = _departmentRepo.GetAll();
-        var developers = _developerRepo.GetAll();
 
-        return new TicketsEditVM { Developers= developers, IsClosed = ticker.IsClosed, Description = ticker.Description, Departments = departments, Severity = ticker.Severity };
+        
+        return new TicketsEditVM { Id=ticker.Id , Title=ticker.Title , IsClosed = ticker.IsClosed, Description = ticker.Description,  Severity = ticker.Severity };
     }
 
     public void update(TicketsEditVM tvm)
     {
-        //var tickerToUpdate = _ticketRepo.Get(tvm.Id);
-        //tickerToUpdate.Description = tvm.Description;
-        //tickerToUpdate.Severity= tvm.Severity;
-        //tickerToUpdate.de = tvm.Departments;
-        //tickerToUpdate.IsClosed = tvm.IsClosed;
 
-        //_ticketRepo.Update(tickerToUpdate);
-        //_ticketRepo.Save();
+        var tickerToUpdate = _ticketRepo.Get(tvm.Id);
+        tickerToUpdate.Description = tvm.Description;
+        tickerToUpdate.Severity = tvm.Severity;
+        tickerToUpdate.Developers =   _developerRepo.GetAll().Where(dev => (tvm.Developers.Contains(dev.Id))).ToList();
+        tickerToUpdate.IsClosed = tvm.IsClosed;
+        tickerToUpdate.Dept_id = _departmentRepo.Get(tvm.Departments)!.Id;
+
+        _ticketRepo.Update(tickerToUpdate);
+        _ticketRepo.Save();
     }
 }

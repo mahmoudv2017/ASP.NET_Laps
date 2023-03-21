@@ -1,0 +1,19 @@
+﻿@using TicketLayer.BL.ViewModels.Tickets;
+@model TicketsEditVM;
+
+@{
+    var developerss = ViewData["Developers"] as IEnumerable<SelectListItem>;
+    var deparmtents = ViewData["Departments"] as IEnumerable<SelectListItem>;
+}
+
+<form asp-action="edit" method="post">
+    <input asp-for="IsClosed" />
+    <input asp-for="Description" />
+     <input asp-for="Title" />
+    <select asp-for="Developers" asp-items="@developerss"></select>
+    <select asp-for="Departments" asp-items="@deparmtents"></select>
+
+     <button class="btn btn-success">Update</button>
+    <a class="btn btn-danger" href="/delete/@Model.Id">Delete</a>
+
+</form>

@@ -13,6 +13,8 @@ public record TicketIndexVM
     public int Id { get; set; }
     public string Description { get; set; }=string.Empty;
 
+    public string Title { get; set; } = string.Empty;
+
     [Display(Name ="is Closed ?")]
     public bool IsClosed { get; set; }
 

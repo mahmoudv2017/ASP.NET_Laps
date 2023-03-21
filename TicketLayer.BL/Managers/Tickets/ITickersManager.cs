@@ -16,5 +16,6 @@ public interface ITickersManager
     //public List<TicketIndexVM> GetTicketWithDeparments();
 
     //public List<TicketIndexVM> GetTicketWithDevelopers();
+    void delete(int id);
     void update(TicketsEditVM tvm);
 }
