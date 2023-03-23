@@ -1,0 +1,26 @@
+﻿@using Day6Bonus.Models.View_Model;
+@model TicketVM;
+
+<h1>Hello from tickets</h1>
+
+<form asp-action="add" method="post" enctype="multipart/form-data">
+
+    <div asp-validation-summary="All" ></div>
+
+    <label asp-for="Title">title</label>
+    <input asp-for="Title" />
+
+
+    <label asp-for="Image">Image</label>
+    <input asp-for="Image" type="file" />
+
+    <button class="btn btn-info">Submit</button>
+
+</form>
+
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}
