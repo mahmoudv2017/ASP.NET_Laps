@@ -1,0 +1,17 @@
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\bin\Debug\net7.0\WebApiLapDay2.BL.deps.json
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\bin\Debug\net7.0\WebApiLapDay2.BL.runtimeconfig.json
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\bin\Debug\net7.0\WebApiLapDay2.BL.dll
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\bin\Debug\net7.0\WebApiLapDay2.BL.pdb
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\bin\Debug\net7.0\WebApiLapDay2.DAL.dll
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\bin\Debug\net7.0\WebApiLapDay2.DAL.pdb
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\obj\Debug\net7.0\WebApiLapDay2.BL.csproj.AssemblyReference.cache
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\obj\Debug\net7.0\WebApiLapDay2.BL.GeneratedMSBuildEditorConfig.editorconfig
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\obj\Debug\net7.0\WebApiLapDay2.BL.AssemblyInfoInputs.cache
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\obj\Debug\net7.0\WebApiLapDay2.BL.AssemblyInfo.cs
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\obj\Debug\net7.0\WebApiLapDay2.BL.csproj.CoreCompileInputs.cache
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\obj\Debug\net7.0\WebApiLapDay2.BL.csproj.CopyComplete
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\obj\Debug\net7.0\WebApiLapDay2.BL.dll
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\obj\Debug\net7.0\refint\WebApiLapDay2.BL.dll
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\obj\Debug\net7.0\WebApiLapDay2.BL.pdb
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\obj\Debug\net7.0\WebApiLapDay2.BL.genruntimeconfig.cache
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.BL\obj\Debug\net7.0\ref\WebApiLapDay2.BL.dll

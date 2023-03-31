@@ -1,0 +1,14 @@
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\bin\Debug\net7.0\WebApiLapDay2.DAL.deps.json
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\bin\Debug\net7.0\WebApiLapDay2.DAL.runtimeconfig.json
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\bin\Debug\net7.0\WebApiLapDay2.DAL.dll
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\bin\Debug\net7.0\WebApiLapDay2.DAL.pdb
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\obj\Debug\net7.0\WebApiLapDay2.DAL.csproj.AssemblyReference.cache
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\obj\Debug\net7.0\WebApiLapDay2.DAL.GeneratedMSBuildEditorConfig.editorconfig
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\obj\Debug\net7.0\WebApiLapDay2.DAL.AssemblyInfoInputs.cache
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\obj\Debug\net7.0\WebApiLapDay2.DAL.AssemblyInfo.cs
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\obj\Debug\net7.0\WebApiLapDay2.DAL.csproj.CoreCompileInputs.cache
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\obj\Debug\net7.0\WebApiLapDay2.DAL.dll
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\obj\Debug\net7.0\refint\WebApiLapDay2.DAL.dll
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\obj\Debug\net7.0\WebApiLapDay2.DAL.pdb
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\obj\Debug\net7.0\WebApiLapDay2.DAL.genruntimeconfig.cache
+F:\College Stuff\System Development ITI\WebAPI using ASP.net\Day3\WebApiLapDay2.API\WebApiLapDay2.DAL\obj\Debug\net7.0\ref\WebApiLapDay2.DAL.dll

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WebApiLapDay2.API.props" />
+</Project>
